@@ -1,5 +1,7 @@
 different NN use in different area
 
+![Aaron Swartz](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_1.jpg)
+
 $f(x)=x$
 
 $s=\sum_1^n{n_i}$
