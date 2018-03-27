@@ -1,6 +1,6 @@
-different NN use in different area
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
-[a picture here]
+different NN use in different area
 
 $f(x)=x$
 
