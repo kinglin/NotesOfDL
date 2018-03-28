@@ -21,7 +21,7 @@
     + Y: out put of dataset, 1*m matrix
 
 ### Logistic regression
-given x, and want to know $\hat{y}=P{y=1|x}$<br>
+given x, and want to know $\hat{y}=P\\{y=1|x\\}$<br>
 output is $\hat{y}=\sigma(\omega^T+b)$<br>
 
 ### Logistic Regression cost function
