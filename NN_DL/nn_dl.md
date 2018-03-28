@@ -55,12 +55,12 @@ the whole example:
 ### Logistic regression gradient descent
 This is the procedure of back probagation<br>
 We assume that $X$ stands for 2-D parameters, so that we have $\omega_1,\omega_2$ and $b$ three coefficients here, and use the back probagation.<br>
-At first, we can write the calculation procedure down from left to right, and then we calculate the dirivatives one by one from right to left, using the basic calculus mentioned above. Finally, we get $\omega_1:=\omega_1-\alpha d\omega_1=\omega_1-\alpha*x_1*(a-y)$ and the other two formular.
+At first, we can write the calculation procedure down from left to right, and then we calculate the dirivatives one by one from right to left, using the basic calculus mentioned above. Finally, we get $\omega_1:=\omega_1-\alpha d\omega_1=\omega_1-\alpha\cdot x_1\cdot(a-y)$ and the other two formular.
 ![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_4.png)
 
 ### Vectorization
 vectorization is to make your loop more efficient<br>
-the loop in our program is to calculate $\omega_i*x_i$ , so we have to write a for loop from 1 to n to calculate. But if we use vectorization, the procedure will become a line time a colume in matrix, just like $\omega^T*X$, because the CPU can use parallel thread to do this work. In python, the method is numpy.dot($\omega,x$). Following are the code.
+the loop in our program is to calculate $\omega_ix_i$ , so we have to write a for loop from 1 to n to calculate. But if we use vectorization, the procedure will become a line time a colume in matrix, just like $\omega^TX$, because the CPU can use parallel thread to do this work. In python, the method is numpy.dot($\omega,x$). Following are the code.
 ```
 import numpy as np
 import time
