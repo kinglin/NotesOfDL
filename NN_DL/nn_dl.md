@@ -47,7 +47,7 @@ but in code we use $d\omega$ instead of $\frac{\partial J(\omega,b)}{\partial\om
 
 ### Derivatives with Computation Graph
 make $J=3(a+bc)$, and $u=bc$, $v=a+u$<br>
-then ${\frac{dJ}{da}}={\frac{dJ}{dv}}*{\frac{dv}{da}}=3*1=3$<br>
+then $\frac{dJ}{da}=\frac{dJ}{dv}\cdot\frac{dv}{da}=3\times1=3$ <br>
 To simplify the representation in code, we use $da$ instead of $\frac{dJ}{da}$<br>
 the whole example:
 ![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_3.png)
