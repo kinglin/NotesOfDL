@@ -21,7 +21,7 @@
     + Y: out put of dataset, 1*m matrix
 
 ### Logistic regression
-given x, and want to know $\hat{y}=P\{y=1|x\}$<br>
+given x, and want to know $\hat{y}=P{y=1|x}$<br>
 output is $\hat{y}=\sigma(\omega^T+b)$<br>
 
 ### Logistic Regression cost function
@@ -60,7 +60,7 @@ At first, we can write the calculation procedure down from left to right, and th
 
 ### Vectorization
 vectorization is to make your loop more efficient<br>
-the loop in our program is to calculate $\omega_i*x_i$, so we have to write a for loop from 1 to n to calculate. But if we use vectorization, the procedure will become a line time a colume in matrix, just like $\omega^T*X$, because the CPU can use parallel thread to do this work. In python, the method is numpy.dot($\omega,x$). Following are the code.
+the loop in our program is to calculate $\omega_i*x_i$ , so we have to write a for loop from 1 to n to calculate. But if we use vectorization, the procedure will become a line time a colume in matrix, just like $\omega^T*X$, because the CPU can use parallel thread to do this work. In python, the method is numpy.dot($\omega,x$). Following are the code.
 ```
 import numpy as np
 import time
