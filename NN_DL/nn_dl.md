@@ -59,9 +59,10 @@ At first, we can write the calculation procedure down from left to right, and th
 ![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_4.png)
 
 ### Vectorization
+***whenever possible, avoid explicit for-loops***<br>
 vectorization is to make your loop more efficient<br>
-the loop in our program is to calculate $\omega_ix_i$ , so we have to write a for loop from 1 to n to calculate. But if we use vectorization, the procedure will become a line time a colume in matrix, just like $\omega^TX$, because the CPU can use parallel thread to do this work. In python, the method is numpy.dot($\omega,x$). Following are the code.
-```
+the loop in our program is to calculate $\omega_ix_i$ , so we have to write a for loop from 1 to n to calculate. But if we use vectorization, the procedure will become a line time a colume in matrix, just like $\omega^TX$, because the CPU can use parallel thread to do this work. In python, the method is numpy.dot($\omega,x$). Following is the code.
+```python3
 import numpy as np
 import time
 
@@ -76,13 +77,47 @@ print(c)
 print(toc-tic)
 
 #results
-249825.69335160166
-0.0015769004821777344
+#249825.69335160166
+#0.0015769004821777344
 ```
 
+another example
+```python3
+v = np.array([5,-1,3,2])
+print(v)
+u = np.exp(v)
+print(u)
+u = np.maximum(v,0)
+print(u)
+u = 1/v
+print(u)
 
+#result
+#[ 5 -1  3  2]
+#[148.4131591    0.36787944  20.08553692   7.3890561 ]
+#[5 0 3 2]
+#[ 0.2        -1.          0.33333333  0.5       ]
+```
 
+**Vectorizing Logistic Regression**<br>
 
+We get these formular:<br>
+$z^{(1)}=w^Tx^{(1)}+b$&emsp;&emsp;$a^{(1)}=\sigma(z^{(1)})$&emsp;&emsp;<br>
+$z^{(2)}=w^Tx^{(2)}+b$&emsp;&emsp;$a^{(2)}=\sigma(z^{(2)})$&emsp;&emsp;<br>
+...<br>
+$z^{(m)}=w^Tx^{(m)}+b$&emsp;&emsp;$a^{(m)}=\sigma(z^{(m)})$&emsp;&emsp;<br>
+In ordinary programming procedure, we have 2 for-loop here: a loop for m, and a loop for n(w*x)<br>
+But with help of numpy, we can make it more efficient.<br>
+At first, we regard all <br>
+$x^{(i)}$ as an $n_x\times m$ matrix $X=[x^{(1)}\ x^{(2)}\ \cdots\ x^{(m)}]$, and<br>
+$w$ as an $n_x\times 1$ column vector $w=[w_1\ w_2\ \cdots \ w_n]^T$, and <br>
+$b$ as an $1\times m$ row vector $b=[b\ b\ \cdots \ b]$<br>
+
+so we make <br>
+$Z=[z^{(1)}\ z^{(2)}\ \cdots\ z^{(m)}]=w^TX+b=np.dot(w.T, X)+b$<br>
+$b$ here will be broadcasted by python, so it won't trouble if it is a real number actually.
+
+After getting $Z$ calculated by just one line code, we need to calculate $A=[a^{(1)}\ a^{(2)}\ \cdots\ a^{(m)}]=\sigma(Z)$ next.
 
 
 
