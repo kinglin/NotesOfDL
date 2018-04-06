@@ -126,6 +126,9 @@ $b$ here will be broadcasted by python, so it won't trouble if it is a real numb
 
 After getting $Z$ calculated by just one line code, we need to calculate $A=[a^{(1)}\ a^{(2)}\ \cdots\ a^{(m)}]=\sigma(Z)$ next.
 
+##week 3
+In general, if a neural network has one hidder layer and one output layer, we call it a **two layer** neural network<br>
+![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_5.png)
 
 
 
