@@ -130,6 +130,8 @@ After getting $Z$ calculated by just one line code, we need to calculate $A=[a^{
 In general, if a neural network has one hidder layer and one output layer, we call it a **two layer** neural network<br>
 ![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_5.png)
 
+Four lines of code to calculate the output of two layers NN:
+![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_6.png)
 
 
 
