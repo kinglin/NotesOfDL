@@ -32,6 +32,13 @@ $L(\hat{y},y)=-(ylog\hat{y}+(1-y)log(1-\hat{y}))$<br>
 so the cost funtion is the average of all records:<br>
 $J(\omega,b)=\frac{1}{m}\sum_{i=1}^{m}L(\hat{y},y)$
 
+>actually, the basic concept of classification is probabilities<br>
+for example, <br>
+if $y=1: p(y|x)=\hat{y}$<br>
+if $y=0: p(y|x)=1-\hat{y}$<br>
+so that $p(y|x)=\hat{y}^y(1-\hat{y})^{1-y}$<br>
+and calculate log for both sides, we can get loss function above
+
 ### Gradient descent
 >repeat{<br>
 >&emsp;&emsp;$\omega:=\omega-\alpha\frac{dJ(\omega)}{d\omega}$    
@@ -118,6 +125,19 @@ $Z=[z^{(1)}\ z^{(2)}\ \cdots\ z^{(m)}]=w^TX+b=np.dot(w.T, X)+b$<br>
 $b$ here will be broadcasted by python, so it won't trouble if it is a real number actually.
 
 After getting $Z$ calculated by just one line code, we need to calculate $A=[a^{(1)}\ a^{(2)}\ \cdots\ a^{(m)}]=\sigma(Z)$ next.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
