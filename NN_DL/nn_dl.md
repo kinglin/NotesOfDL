@@ -146,3 +146,5 @@ Four lines of code to calculate the output of two layers NN:
 
 
 
+
+
