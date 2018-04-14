@@ -193,8 +193,14 @@ g^{'}(z)=
 **Formulars for computing derivatives**
 ![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_8.png)
 
+**Random Initialization**  
+Why don't use 0 as initial weights?  
+No matter how many epoch we process, the hidden units are all symmetric, and there will be no difference between them.(weights will all be the same)
+![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_9.png)
 
-
+What should we do?  
+Random initialize the weights, and give a relative small factor(like 0.01)  
+![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_10.png)
 
 
 
