@@ -146,6 +146,19 @@ for i in num_of_layers:
     A[i+1] = sigmoid(Z[i+1])
 ```
 
+***To make dimensions more clear***  
+$z^{[1]} = W^{[1]}x + b^{[1]}$——>$4*1,4*3,3*1,4*1$  
+$a^{[1]} = \sigma (z^{[1]})$——>$4*1,4*1$  
+$z^{[2]} = W^{[2]}a^{[1]} + b^{[2]}$——>$1*1,1*4,4*1,1*1$  
+$a^{[2]} = \sigma (z^{[2]})$——>$1*1,1*1$  
+
+To avoid for-loop of 1 to m:  
+$Z^{[1]} = W^{[1]}X + b^{[1]}$——>$4*m,4*3,3*m,4*m$  
+$A^{[1]} = \sigma (Z^{[1]})$——>$4*m,4*m$  
+$Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]}$——>$1*m,1*4,4*m,1*m$  
+$A^{[2]} = \sigma (Z^{[2]})$——>$1*m,1*m$  
+
+
 **Activation Function**  
 Activation function can be different in different layers, even in different nodes  
 One stategy is that we choose **ReLU** $a=max(0,z)$ or **tanh** $tanh(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}}$ or instead of $\sigma(z)$ in hidden layers, because the scope of $tanh(z)$ is $[-1,1]$, and $0$ as mean is better than $0.5$  
@@ -177,8 +190,8 @@ g^{'}(z)=
 \end{cases}
 \end{equation}$  
 
-
-
+**Formulars for computing derivatives**
+![avatar](https://github.com/kinglin/NotesOfDL/raw/master/pics/nn_dl_8.png)
 
 
 
