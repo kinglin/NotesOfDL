@@ -211,3 +211,4 @@ Random initialize the weights, and give a relative small factor(like 0.01)
 
 
 
+
